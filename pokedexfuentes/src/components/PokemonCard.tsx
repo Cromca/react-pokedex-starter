@@ -7,18 +7,22 @@ interface PokemonCardProps {
 
 function PokemonCard({ pokemon }: PokemonCardProps) {
   return (
-    <figure>
+    <figure className={`pokemon-card ${pokemon.name}`}>
       {pokemon.imgSrc ? (
         <img
+          className="pokemon-image"
           src={pokemon.imgSrc}
           alt={pokemon.name}
-          width={250}
         />
       ) : (
-        <p>Image non disponible</p>
+        <p className="pokemon-placeholder">
+          Image non disponible
+        </p>
       )}
 
-      <figcaption>{pokemon.name}</figcaption>
+      <figcaption className="pokemon-name">
+        {pokemon.name}
+      </figcaption>
     </figure>
   );
 }
